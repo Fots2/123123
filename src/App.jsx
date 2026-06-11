@@ -78,7 +78,7 @@ export default function App() {
       `🍽 Еда: ${selectedFood}`,
       `📅 Дата: ${prettyDate}`,
       `⏰ Время: ${time || "—"}`,
-      `💃 Традиция: в конце свидания обязательно танцуем`,
+      `💃 в конце свидания обязательно танцуем`,
       "",
       
     ].join("\n");
@@ -379,12 +379,6 @@ export default function App() {
               <h2 className="mt-5 text-4xl font-semibold text-rose-800">
                 Это будет прекрасный вечер ❤️
               </h2>
-
-              <p className="mx-auto mt-4 max-w-xl text-lg leading-8 text-rose-700">
-                {savedResult || "Твоё приглашение уже сохранено."}
-                <br />
-                И да — танец в конце свидания обязателен💃🕺
-              </p>
 
               <motion.div
                 animate={{ rotate: [0, -6, 0, 6, 0], y: [0, -4, 0] }}
