@@ -80,7 +80,7 @@ export default function App() {
       `⏰ Время: ${time || "—"}`,
       `💃 Традиция: в конце свидания обязательно танцуем`,
       "",
-      message,
+      
     ].join("\n");
   }, [selectedFood, prettyDate, time, message]);
 
@@ -326,7 +326,7 @@ export default function App() {
                       <div className="rounded-2xl bg-rose-50 p-4">
                         <div className="mb-2 flex items-center gap-2 text-rose-600">
                           <Music2 size={16} />
-                          Наша традиция
+                          
                         </div>
                         <motion.div
                           animate={{ rotate: [0, -4, 0, 4, 0], y: [0, -3, 0] }}
@@ -383,7 +383,7 @@ export default function App() {
               <p className="mx-auto mt-4 max-w-xl text-lg leading-8 text-rose-700">
                 {savedResult || "Твоё приглашение уже сохранено."}
                 <br />
-                И да — танец в конце свидания обязателен, это наша традиция 💃🕺
+                И да — танец в конце свидания обязателен💃🕺
               </p>
 
               <motion.div
@@ -392,7 +392,7 @@ export default function App() {
                 className="mx-auto mt-6 inline-flex items-center gap-2 rounded-full bg-white/80 px-5 py-3 text-sm font-semibold text-rose-600 shadow-md"
               >
                 <Music2 size={16} />
-                Танец в конце свидания — обязателен 💃🕺
+                И да — танец в конце свидания обязателен 💃🕺
               </motion.div>
 
               <div className="mt-8 rounded-2xl bg-white/75 p-4 text-sm text-rose-600 shadow-sm">
