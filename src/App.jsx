@@ -9,7 +9,7 @@ import {
   Sparkles,
   UtensilsCrossed,
   ClipboardCopy,
-  Share2,
+  Music2,
 } from "lucide-react";
 
 const foodOptions = [
@@ -31,6 +31,7 @@ export default function App() {
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
   const [message, setMessage] = useState(
+    "Хочу провести с тобой очень тёплый и красивый вечер ❤️"
   );
   const [copied, setCopied] = useState(false);
   const [savedResult, setSavedResult] = useState("");
@@ -77,6 +78,7 @@ export default function App() {
       `🍽 Еда: ${selectedFood}`,
       `📅 Дата: ${prettyDate}`,
       `⏰ Время: ${time || "—"}`,
+      `💃 Традиция: в конце свидания обязательно танцуем`,
       "",
       message,
     ].join("\n");
@@ -96,11 +98,6 @@ export default function App() {
     } catch {
       setCopied(false);
     }
-  };
-
-  const shareTelegram = () => {
-    const text = encodeURIComponent(inviteText);
-    window.open(`https://t.me/share/url?url=&text=${text}`, "_blank");
   };
 
   const moveNoButton = () => {
@@ -153,13 +150,16 @@ export default function App() {
               <div className="mx-auto mb-4 grid h-16 w-16 place-items-center rounded-full bg-rose-100 text-rose-600">
                 <MessageCircleHeart size={30} />
               </div>
+
               <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-rose-100 px-4 py-2 text-sm font-medium text-rose-700">
                 <Sparkles size={16} />
                 приглашение для моей рыбки
               </div>
+
               <p className="mx-auto mt-4 max-w-lg text-lg leading-8 text-rose-700">
                 Ты делаешь обычные дни светлее, и мне очень хочется позвать тебя на уютный вечер.
               </p>
+
               <button
                 onClick={() => setStage("question")}
                 className="mt-8 inline-flex items-center gap-2 rounded-full bg-rose-500 px-6 py-3 text-base font-semibold text-white shadow-lg transition hover:scale-[1.02] active:scale-95"
@@ -183,6 +183,7 @@ export default function App() {
                 <div className="mx-auto grid h-20 w-20 place-items-center rounded-full bg-pink-100 shadow-inner">
                   <Heart size={34} className="text-pink-600" fill="currentColor" />
                 </div>
+
                 <div>
                   <h2 className="text-4xl font-semibold text-rose-800 sm:text-5xl">
                     Как насчёт провести один красивый вечер вместе? 🌹
@@ -300,6 +301,7 @@ export default function App() {
                 <div className="rounded-[2rem] border border-white/80 bg-gradient-to-br from-rose-100 via-pink-100 to-violet-100 p-6 shadow-xl sm:p-8">
                   <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-white/75 px-4 py-2 text-sm font-medium text-rose-700 shadow-sm">
                     <Heart size={16} fill="currentColor" />
+                    красивая карточка
                   </div>
 
                   <div className="rounded-[1.75rem] bg-white/80 p-6 shadow-inner">
@@ -322,8 +324,17 @@ export default function App() {
                       </div>
 
                       <div className="rounded-2xl bg-rose-50 p-4">
-                        <div className="text-rose-600">Тёплое сообщение</div>
-                        <div className="mt-1 leading-6">{message}</div>
+                        <div className="mb-2 flex items-center gap-2 text-rose-600">
+                          <Music2 size={16} />
+                          Наша традиция
+                        </div>
+                        <motion.div
+                          animate={{ rotate: [0, -4, 0, 4, 0], y: [0, -3, 0] }}
+                          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                          className="font-medium text-rose-800"
+                        >
+                          В конце свидания обязательно танцуем 💃🕺
+                        </motion.div>
                       </div>
                     </div>
 
@@ -359,16 +370,31 @@ export default function App() {
               >
                 <Heart size={34} fill="currentColor" />
               </motion.div>
+
               <div className="inline-flex items-center gap-2 rounded-full bg-white/75 px-4 py-2 text-sm font-medium text-rose-700 shadow-sm">
                 <PartyPopper size={16} />
                 ну вот и всё
               </div>
-              <h2 className="mt-5 text-4xl font-semibold text-rose-800">Это будет прекрасный вечер ❤️</h2>
+
+              <h2 className="mt-5 text-4xl font-semibold text-rose-800">
+                Это будет прекрасный вечер ❤️
+              </h2>
+
               <p className="mx-auto mt-4 max-w-xl text-lg leading-8 text-rose-700">
                 {savedResult || "Твоё приглашение уже сохранено."}
                 <br />
-                {message}
+                И да — танец в конце свидания обязателен, это наша традиция 💃🕺
               </p>
+
+              <motion.div
+                animate={{ rotate: [0, -6, 0, 6, 0], y: [0, -4, 0] }}
+                transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
+                className="mx-auto mt-6 inline-flex items-center gap-2 rounded-full bg-white/80 px-5 py-3 text-sm font-semibold text-rose-600 shadow-md"
+              >
+                <Music2 size={16} />
+                Танец в конце свидания — обязателен 💃🕺
+              </motion.div>
+
               <div className="mt-8 rounded-2xl bg-white/75 p-4 text-sm text-rose-600 shadow-sm">
                 {resultSaved
                   ? "Ответ сохранён. Можешь скопировать текст приглашения и написать мне ❤️."
@@ -384,8 +410,6 @@ export default function App() {
                   <ClipboardCopy size={16} />
                   {copied ? "Скопировано" : "Скопировать текст"}
                 </button>
-
-
               </div>
 
               <div className="mt-8 flex items-center justify-center gap-2 text-rose-400">
