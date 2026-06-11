@@ -30,9 +30,6 @@ export default function App() {
   const [selectedFood, setSelectedFood] = useState("Суши");
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
-  const [message, setMessage] = useState(
-    "Ты очень милая, и мне бы хотелось бы провести с тобой спокойный и тёплый вечер."
-  );
   const [copied, setCopied] = useState(false);
   const [savedResult, setSavedResult] = useState("");
   const [resultSaved, setResultSaved] = useState(false);
@@ -99,11 +96,7 @@ export default function App() {
     }
   };
 
-  const shareTelegram = () => {
-    const text = encodeURIComponent(inviteText);
-    window.open(`https://t.me/share/url?url=&text=${text}`, "_blank");
-  };
-
+ 
   const moveNoButton = () => {
     const maxX = 260;
     const maxY = 180;
@@ -372,7 +365,7 @@ export default function App() {
               </p>
               <div className="mt-8 rounded-2xl bg-white/75 p-4 text-sm text-rose-600 shadow-sm">
                 {resultSaved
-                  ? "Ответ сохранён. Можешь скопировать текст приглашения или поделиться им в Телеграме."
+                  ? "Ответ сохранён. Скопируй текст приглашения и напиши мне ❤️"
                   : "Нажми подтвердить, чтобы сохранить ответ."}
               </div>
 
@@ -386,14 +379,6 @@ export default function App() {
                   {copied ? "Скопировано" : "Скопировать текст"}
                 </button>
 
-                <button
-                  type="button"
-                  onClick={shareTelegram}
-                  className="inline-flex items-center gap-2 rounded-full bg-rose-500 px-6 py-3 text-sm font-semibold text-white shadow-lg transition hover:scale-[1.02]"
-                >
-                  <Share2 size={16} />
-                  Поделиться в Телеграм
-                </button>
               </div>
 
               <div className="mt-8 flex items-center justify-center gap-2 text-rose-400">
