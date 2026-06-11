@@ -30,6 +30,8 @@ export default function App() {
   const [selectedFood, setSelectedFood] = useState("Суши");
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
+  const [message, setMessage] = useState(
+  );
   const [copied, setCopied] = useState(false);
   const [savedResult, setSavedResult] = useState("");
   const [resultSaved, setResultSaved] = useState(false);
@@ -96,7 +98,11 @@ export default function App() {
     }
   };
 
- 
+  const shareTelegram = () => {
+    const text = encodeURIComponent(inviteText);
+    window.open(`https://t.me/share/url?url=&text=${text}`, "_blank");
+  };
+
   const moveNoButton = () => {
     const maxX = 260;
     const maxY = 180;
@@ -365,7 +371,7 @@ export default function App() {
               </p>
               <div className="mt-8 rounded-2xl bg-white/75 p-4 text-sm text-rose-600 shadow-sm">
                 {resultSaved
-                  ? "Ответ сохранён. Скопируй текст приглашения и напиши мне ❤️"
+                  ? "Ответ сохранён. Можешь скопировать текст приглашения и написать мне ❤️."
                   : "Нажми подтвердить, чтобы сохранить ответ."}
               </div>
 
@@ -378,6 +384,7 @@ export default function App() {
                   <ClipboardCopy size={16} />
                   {copied ? "Скопировано" : "Скопировать текст"}
                 </button>
+
 
               </div>
 
