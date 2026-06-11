@@ -156,7 +156,7 @@ export default function App() {
               </div>
               <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-rose-100 px-4 py-2 text-sm font-medium text-rose-700">
                 <Sparkles size={16} />
-                маленькое чудо для рыбки
+                приглашение для моей рыбки
               </div>
               <p className="mx-auto mt-4 max-w-lg text-lg leading-8 text-rose-700">
                 Ты делаешь обычные дни светлее, и мне очень хочется позвать тебя на уютный вечер.
@@ -168,9 +168,6 @@ export default function App() {
                 Открыть приглашение
                 <Heart size={16} fill="currentColor" />
               </button>
-              <p className="mt-6 flex items-center justify-center gap-1 text-xs text-rose-400">
-                <Heart size={12} fill="currentColor" /> сделано с теплом
-              </p>
             </motion.section>
           )}
 
@@ -304,7 +301,6 @@ export default function App() {
                 <div className="rounded-[2rem] border border-white/80 bg-gradient-to-br from-rose-100 via-pink-100 to-violet-100 p-6 shadow-xl sm:p-8">
                   <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-white/75 px-4 py-2 text-sm font-medium text-rose-700 shadow-sm">
                     <Heart size={16} fill="currentColor" />
-                    красивая карточка
                   </div>
 
                   <div className="rounded-[1.75rem] bg-white/80 p-6 shadow-inner">
