@@ -189,7 +189,7 @@ export default function App() {
                 </div>
                 <div>
                   <h2 className="text-4xl font-semibold text-rose-800 sm:text-5xl">
-                    Пойдёшь со мной на свидание?
+                    Как насчёт провести один красивый вечер вместе? 🌹
                   </h2>
                 </div>
 
@@ -235,7 +235,7 @@ export default function App() {
                 <div className="rounded-[2rem] border border-white/80 bg-white/80 p-6 shadow-lg sm:p-8">
                   <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-rose-100 px-4 py-2 text-sm font-medium text-rose-700">
                     <Sparkles size={16} />
-                    теперь выберем детали
+                    Соберём наше идеальное свидание ✨
                   </div>
 
                   <p className="mt-4 max-w-xl text-base leading-7 text-rose-600 sm:text-lg">
@@ -298,20 +298,6 @@ export default function App() {
                         />
                       </label>
                     </div>
-
-                    <label className="rounded-[1.5rem] border border-white/80 bg-white/90 p-4 shadow-sm">
-                      <div className="mb-2 flex items-center gap-2 text-sm font-semibold text-rose-700">
-                        <MessageCircleHeart size={16} />
-                        Милое сообщение
-                      </div>
-                      <textarea
-                        value={message}
-                        onChange={(e) => setMessage(e.target.value)}
-                        rows={4}
-                        className="w-full resize-none bg-transparent text-base text-rose-800 outline-none placeholder:text-rose-300"
-                        placeholder="Напиши что-нибудь очень нежное..."
-                      />
-                    </label>
                   </div>
                 </div>
 
@@ -355,7 +341,7 @@ export default function App() {
                       }}
                       className="mt-6 w-full rounded-2xl bg-rose-500 px-5 py-4 text-base font-semibold text-white shadow-lg transition hover:scale-[1.01]"
                     >
-                      Подтвердить приглашение
+                      Жду этот вечер ✨
                     </button>
                   </div>
                 </div>
@@ -382,7 +368,7 @@ export default function App() {
                 <PartyPopper size={16} />
                 ну вот и всё
               </div>
-              <h2 className="mt-5 text-4xl font-semibold text-rose-800">Как мило получилось</h2>
+              <h2 className="mt-5 text-4xl font-semibold text-rose-800">Это будет прекрасный вечер ❤️</h2>
               <p className="mx-auto mt-4 max-w-xl text-lg leading-8 text-rose-700">
                 {savedResult || "Твоё приглашение уже сохранено."}
                 <br />
