@@ -78,7 +78,6 @@ export default function App() {
       `🍽 Еда: ${selectedFood}`,
       `📅 Дата: ${prettyDate}`,
       `⏰ Время: ${time || "—"}`,
-      `💃 в конце свидания обязательно танцуем`,
       "",
       
     ].join("\n");
